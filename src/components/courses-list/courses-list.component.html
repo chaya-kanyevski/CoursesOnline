@@ -1,0 +1,26 @@
+<div class="courses-container" style="background-color: #001f3f; padding: 20px; margin-top: 60px; height: 100%;">
+  <h2 style="color: white; margin-right: 20px;">Our Courses:</h2>
+  <div class="course-grid">
+    @for (course of courses; track course.id){
+      <mat-card class="course-card">
+        <mat-card-header>
+          <a  [routerLink]="['/courses', course.id]"> 
+            <mat-card-title class="course-title" style=" font-family: Arial, Helvetica, sans-serif;">{{ course.title }}</mat-card-title>
+          </a>         
+      </mat-card-header>
+      <mat-card-content>
+          <p class="course-description">{{ course.description }}</p>
+      </mat-card-content>
+      <mat-card-actions>
+        @if(this.isStudent()){
+          @if(course.isEnrolled){
+          <button (click)="leaveCourse(course.id!)" class="action-button">leave</button>
+          }@else {
+          <button (click)="joinCourse(course.id!)" class="action-button">join</button>
+        }
+      }
+      </mat-card-actions>
+      </mat-card>
+    }
+  </div>
+</div>

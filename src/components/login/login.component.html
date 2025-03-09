@@ -1,0 +1,25 @@
+<body>
+
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <label for="email">email:</label>
+    <input type="email" id="email" formControlName="email" required placeholder="your email here...">
+
+    <label for="password">password:</label>
+    <input id="password" formControlName="password" required placeholder="your password here...">
+
+    @if (f['email'].errors && f['email'].touched) {
+        @if (f['email'].errors['required']) {
+            <div>email is required</div>
+        }
+    }
+    @if (f['password'].errors && f['password'].touched) {
+        @if (f['password'].errors['required']) {
+            <div>password is required</div>
+        }
+        @if (f['password'].errors['minlength']) {
+            <div>password must be at least 5 characters.</div>
+        }
+    }
+    <button type="submit" [disabled]="loginForm.invalid" class="submit-button">Submit</button>
+</form>
+</body>

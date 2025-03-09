@@ -1,0 +1,58 @@
+<div class="custom-dialog-container">
+  <h2 style="color: #001f3f;">lessons in course {{ course.title }}:</h2>
+  <button (click)="openAddLessonDialog()" style="color: white; background-color: #FF4081;"
+  class="add-lesson-button">
+    add new lesson</button>
+
+  @for(lesson of lessons; track lesson.id!) {
+    <div class="lesson-item">
+      <span class="lesson-title">{{ lesson?.title }}</span>
+      <button (click)="openUpdateLessonDialog(lesson)" class="action-buttons edit-button">edit</button>
+      <button (click)="deleteLesson(lesson.id!)" class="action-buttons delete-button">delete</button>
+  </div>
+  }
+
+  @if(showAddDialog) {
+      <div class="custom-dialog-container">
+          <h2 class="dialog-title">add new lesson</h2>
+          <form (ngSubmit)="addLesson()" #addLessonForm="ngForm">
+              <mat-form-field appearance="fill">
+                  <mat-label>lesson name</mat-label>
+                  <input matInput [(ngModel)]="this.newTitle" name="title" required style=" font-family: Arial, Helvetica, sans-serif">
+              </mat-form-field>
+
+              <mat-form-field appearance="fill">
+                  <mat-label>lesson content</mat-label>
+                  <textarea matInput [(ngModel)]="this.newContent" name="content" style=" font-family: Arial, Helvetica, sans-serif"></textarea>
+              </mat-form-field>
+
+              <div mat-dialog-actions>
+                  <button mat-button type="button" style="color :#00BFFF;"  (click)="onCancel()">cancel</button>
+                  <button mat-raised-button style="color :#00BFFF" type="submit" [disabled]="!addLessonForm.form.valid">save</button>
+              </div>
+          </form>  
+      </div>
+  }
+
+  @if(showUpdateDialog) {
+      <div class="custom-dialog-container">
+          <h2 class="dialog-title">Edit lesson:</h2>
+          <form (ngSubmit)="updateLesson()" #updateLessonForm="ngForm">
+              <mat-form-field appearance="fill">
+                  <mat-label>lesson name</mat-label>
+                  <input matInput [(ngModel)]="this.newTitle" name="title">
+              </mat-form-field>
+
+              <mat-form-field appearance="fill">
+                  <mat-label>lesson content</mat-label>
+                  <textarea matInput [(ngModel)]="this.newContent" name="content"></textarea>
+              </mat-form-field>
+
+              <div mat-dialog-actions>
+                  <button mat-button type="button" (click)="onCancel()" style="color :#00BFFF;">cancel</button>
+                  <button mat-raised-button color="primary" type="submit" style="color :#00BFFF;" [disabled]="!updateLessonForm.form.valid">save</button>
+              </div>
+          </form>  
+      </div>
+  }
+</div>

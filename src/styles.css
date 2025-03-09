@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; margin: 0;}
+body { margin: 0; font-family: 'Arial', sans-serif; }
+:root {
+    --primary-color: #1A73E8; 
+    --secondary-color: #00BCD4; 
+    --success-color: #4CAF50;  
+    --warning-color: #FF9800;   
+    --error-color: #F44336;    
+  }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

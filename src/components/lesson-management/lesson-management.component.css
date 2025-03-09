@@ -1,0 +1,89 @@
+.custom-dialog-container {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    padding: 30px;
+    width: 80%;
+  }
+  
+  .dialog-title {
+    color: #001f3f;
+    margin-bottom: 20px;
+  }
+  
+  .mat-form-field {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .add-lesson-button {
+    background-color: #FF4081;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s;
+    margin-bottom: 20px;
+    display: block;
+  }
+  
+  .add-lesson-button:hover {
+    background-color: #CC3366;
+  }
+  
+  .lesson-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  .action-buttons {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .lesson-title {
+    color: #001f3f;
+    font-weight: bold;
+  }
+  
+  .edit-button, .delete-button {
+    background-color: white;
+    color: #00BFFF;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s;
+    display: flex;
+    gap: 10px;
+    align-items: end;
+    justify-content: end;
+  }
+  
+  .edit-button:hover, .delete-button:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .action-buttons {
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+  }
+  
+  .edit-button {
+    margin-left: 30px;
+  }
+  
+  mat-form-field {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  

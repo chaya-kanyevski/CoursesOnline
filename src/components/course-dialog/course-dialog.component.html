@@ -1,0 +1,18 @@
+<div class="custom-dialog-container">
+<h2 class="dialog-title">{{ isEdid ? 'Edit course:' : 'Add new course:' }}</h2>
+
+<mat-form-field appearance="fill" style="font-family: Arial, Helvetica, sans-serif;">
+    <mat-label>course name</mat-label>
+    <input matInput [(ngModel)]="newTitle" required>
+</mat-form-field>
+
+<mat-form-field appearance="fill" style="font-family: Arial, Helvetica, sans-serif;">
+    <mat-label>course description</mat-label>
+    <textarea matInput [(ngModel)]="newDescription"></textarea>
+</mat-form-field>
+
+<div class="dialog-actions">
+    <button mat-button class="submit-button" (click)="onSubmit()" style="color: #FF4081;">save</button>
+    <button mat-button class="cancel-button" (click)="onCancel()" style="color: #FF4081;">cancel</button>
+</div>
+</div>

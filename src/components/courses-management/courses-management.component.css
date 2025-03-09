@@ -1,0 +1,56 @@
+.course-management-container {
+    background-color: #001f3f;
+    padding: 20px;
+    margin-top: 0px;
+}
+
+.add-course-button {
+    margin-top: 90px;
+    margin-left: 15px;
+    background-color: #00BFFF;
+    color: white;
+    border-radius: 5px;
+    padding: 10px 20px;
+    transition: background-color 0.3s;
+    border: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.add-course-button:hover {
+    background-color: #0099CC;
+}
+
+.mat-list-item {
+    background-color: #001f3f;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+    transition: background-color 0.3s;
+    padding: 10px;
+    font-size: 200px;
+    font-family: Arial, Helvetica, sans-serif;
+    height: 300px;
+}
+
+.course-title {
+    font-size: 20px;
+    color: white;
+    overflow: visible;
+}
+
+.action-button {
+    background-color: #FF4081;
+    color: white;
+    border: none;
+    padding: 5px 7px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
+    transition: background-color 0.3s;
+    height: 30px;
+    text-align: center;
+}
+
+.action-button:hover {
+    background-color: #CC3366;
+}

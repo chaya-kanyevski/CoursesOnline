@@ -1,0 +1,44 @@
+.course-details-container {
+    background-color: #001f3f;
+    padding: 20px;
+    text-align: center;
+    margin-top: 90px;
+    height: 100vh;
+    text-align: right;
+}
+
+.course-title {
+    color: #FF4081;
+    font-size: 30px;
+}
+
+.course-description {
+    color: white;
+    font-size: 16px;
+}
+
+.lesson-list-title {
+    color: #00BFFF;
+    font-size: 20px;
+    text-align: left;
+    margin-right: 20px;
+}
+
+.father {
+    display: flex;
+    align-items: end;
+    text-align: right;
+}
+
+.lesson-title {
+    color: #FF4081;
+    font-size: 18px;
+    text-align: right;
+    width: 100%;
+}
+
+.lesson-content {
+    color: #001f3f;
+    font-size: 14px;
+    text-align: left;
+}

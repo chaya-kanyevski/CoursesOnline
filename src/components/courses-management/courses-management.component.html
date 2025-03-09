@@ -1,0 +1,32 @@
+<div class="course-management-container" style="background-color: #001f3f; padding: 20px;">
+  <button class="add-course-button" (click)="openCourseDialog()">add new course</button>
+
+  <mat-list>
+      @for(course of courses; track course.id) {
+          <mat-list-item style="background-color: #001f3f; color: white; font-size: 30px; display: flex; 
+          justify-content: space-between; align-items: center; margin-bottom: 40px; height: 70px;">
+              <span style="color: white; margin-bottom: 20px; font-family: Arial, Helvetica, sans-serif;">{{ course.title }}</span>
+              <span class="course-actions" style="display: flex; gap: 10px;">
+                  <button class="action-button delete-button" (click)="deleteCourse(course.id!)">delete</button>
+                  <button class="action-button edit-button" (click)="onEdit(course)">edit</button>
+                  <button class="action-button manage-button" (click)="manageLessons(course)">edit lessons</button>
+              </span>
+          </mat-list-item>
+      }
+  </mat-list>
+
+  @if (showDialog){
+    <app-course-dialog 
+    [course]="this.selectedCourse!"
+    [isEdid]="this.isEdid"
+    (courseSubmit)="onCourseSubmit($event)"
+    (cancel)="closeDialog()">
+    </app-course-dialog>
+  }
+
+  @if (showLessonsDialog){
+    <app-lesson-management
+    [course]="this.selectedCourse!">
+    </app-lesson-management>
+  }
+</div>
