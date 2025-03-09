@@ -21,6 +21,7 @@ import { MatIconModule } from '@angular/material/icon';
 })
 export class CourseDetailsComponent implements OnInit {
   @Input() course : Course | null = null
+
   lessons: Lesson[] = [];
 
   constructor(

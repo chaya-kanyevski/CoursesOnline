@@ -103,4 +103,6 @@ export class CoursesListComponent implements OnInit{
   isStudent() {
     return this.authService.getUserRole() === 'student';
 }
+
+
 }

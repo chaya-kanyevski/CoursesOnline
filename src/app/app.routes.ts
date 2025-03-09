@@ -18,3 +18,4 @@ export const routes: Routes = [
     {path: 'courses/:id', component: CourseDetailsComponent},
     {path: 'access-denied', component: AccessDeniedComponent },
 ];
+
