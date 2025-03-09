@@ -30,12 +30,7 @@
               "@angular/material/prebuilt-themes/azure-blue.css",
               "src/styles.css"
             ],
-            "scripts": [],
-            "server": "src/main.server.ts",
-            "outputMode": "server",
-            "ssr": {
-              "entry": "src/server.ts"
-            }
+            "scripts": []
           },
           "configurations": {
             "production": {
@@ -63,7 +58,7 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
-           "options": {
+          "options": {
             "proxyConfig": "proxy.conf.json"
           },
           "configurations": {
@@ -107,4 +102,3 @@
     "analytics": "cbbdc484-f8cc-4add-812c-dd761d11b452"
   }
 }
-
