@@ -35,7 +35,7 @@ export class LogupComponent implements OnInit{
       if (this.loginForm.valid){
         this.authService.logup(this.loginForm.value).subscribe({
           next: (response) => {
-            console.log('Logup successful!', response);
+            console.log('Logup successful!');
             localStorage.setItem('token', response.token);
             this.router.navigate(['/courses-list']);
           },

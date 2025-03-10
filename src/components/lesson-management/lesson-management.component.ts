@@ -47,7 +47,6 @@ export class LessonManagementComponent implements OnInit{
         lessons => this.lessons = lessons,
         error => console.error('Error loading lessons:', error)
       );
-      console.log(this.course);
     } else {
       console.error('Course is null or undefined');
     }

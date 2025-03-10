@@ -28,8 +28,6 @@ export class CourseDialogComponent{
   newDescription: string = ''
 
   onSubmit() {
-    console.log(this.newTitle)
-    console.log(this.newDescription)
     this.course.title = this.newTitle;
     this.course.description = this.newDescription;
     this.courseSubmit.emit(this.course!);

@@ -37,7 +37,6 @@ export class CoursesManagementComponent implements OnInit{
 
   ngOnInit(): void {
     this.loadCourses();
-    console.log(this.isEdid)
   }
 
   loadCourses() {
@@ -54,7 +53,6 @@ export class CoursesManagementComponent implements OnInit{
   openCourseDialog(course?: Course) {
     this.selectedCourse = course || { title: '', description: '', teacherId: 0, isEnrolled: false };
     this.showDialog = true;
-    console.log(this.isEdid);
   }
   
   onCourseSubmit(course: Course) {
