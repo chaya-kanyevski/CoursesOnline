@@ -1,4 +1,4 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, catchError, tap, throwError } from 'rxjs';
 import { Role, User } from '../models/User';
@@ -55,11 +55,16 @@ export class AuthService {
       }),
       catchError(error => {
         console.error('Login error details:', error);
+        if (error instanceof HttpErrorResponse) {
+          console.error('Status:', error.status);
+          console.error('Response body:', error.error);
+        }
         return throwError(() => new Error('Login failed. Please try again.'));
       })
     );
 
   }
+  
 
   setToken(token: string) {
     localStorage.setItem('token', token);
