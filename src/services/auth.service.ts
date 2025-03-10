@@ -45,7 +45,7 @@ export class AuthService {
   
     return this.http.post(`${this.baseUrl}/login`, credentials, { headers }).pipe(
       tap((response: any) => {
-        console.log(response.token)
+        console.log('response in login service: ',response)
         if (response.token) {
           this.setToken(response.token);
           this.setCurrentUser(response);
