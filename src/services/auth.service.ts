@@ -7,7 +7,7 @@ import { Role, User } from '../models/User';
   providedIn: 'root'
 })
 export class AuthService {
-  private baseUrl = '/api/auth';
+  private baseUrl = 'http://localhost:3000/api/auth';
   private currentUserRole : Role | null = null
   private currentUserId : number | null = null
   private currentUser : User | null = null  
@@ -45,12 +45,14 @@ export class AuthService {
   
     return this.http.post(`${this.baseUrl}/login`, credentials, { headers }).pipe(
       tap((response: any) => {
-        console.log('response in login service: ',response)
-        if (response.token) {
+        console.log('response in login service: ', response);
+        if (response && response.token) {
           this.setToken(response.token);
           this.setCurrentUser(response);
-          this.currentUserId = response.userId
+          this.currentUserId = response.userId;
           this.currentUserRole = response.role;
+        } else {
+          console.error('No token found in response:', response);
         }
       }),
       catchError(error => {
