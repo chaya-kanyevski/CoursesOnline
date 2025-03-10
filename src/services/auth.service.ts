@@ -45,7 +45,6 @@ export class AuthService {
   
     return this.http.post(`${this.baseUrl}/login`, credentials, { headers }).pipe(
       tap((response: any) => {
-        console.log('response in login service: ', response);
         if (response && response.token) {
           this.setToken(response.token);
           this.setCurrentUser(response);
@@ -89,7 +88,6 @@ export class AuthService {
     }
 
     getUserRole() {
-    console.log(this.currentUserRole)
     return this.currentUserRole;
   }
 

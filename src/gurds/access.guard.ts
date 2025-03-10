@@ -12,10 +12,7 @@ export class AccessGuard implements CanActivate {
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): boolean {
-      console.log(this.authService.getUserRole())
-    const userRole = this.authService.getUserRole();
-    console.log("in guard", userRole === 'teacher')
-    console.log("in guard", userRole)   
+    const userRole = this.authService.getUserRole();  
     if (userRole === 'teacher') {
       return true;
     } else {
