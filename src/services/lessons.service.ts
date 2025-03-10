@@ -9,7 +9,7 @@ import { Lesson } from '../models/Lesson';
 })
 export class LessonsService {
 
-  private baseUrl = "/api/courses"
+  private baseUrl = "http://localhost:3000/api/courses"
 
   constructor(
     private http : HttpClient,

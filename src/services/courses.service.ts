@@ -8,7 +8,7 @@ import { map, Observable, pipe, tap } from 'rxjs';
   providedIn: 'root'
 })
 export class CoursesService {
-  private baseUrl = '/api/courses';
+  private baseUrl = 'http://localhost:3000/api/courses';
 
   constructor(
     private http: HttpClient,
